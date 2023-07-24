@@ -66,7 +66,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE( FLevelStreamingVisibilityStatus );
  * interface for when a level should be streamed in and out of memory.
  *
  */
-UCLASS(abstract, editinlinenew,MinimalAPI)
+UCLASS(abstract, editinlinenew, BlueprintType, MinimalAPI)
 class ULevelStreaming : public UObject
 {
 	GENERATED_UCLASS_BODY()
@@ -276,7 +276,7 @@ public:
 	ULevelStreaming* CreateInstance(FString UniqueInstanceName);
 
 	/** Returns the Level Script Actor of the level if the level is loaded and valid */
-	UFUNCTION(BlueprintPure, meta = (BlueprintInternalUseOnly = "true"))
+	UFUNCTION(BlueprintPure, Category="Game")
 	ENGINE_API ALevelScriptActor* GetLevelScriptActor();
 
 	//~==============================================================================================
